@@ -105,8 +105,6 @@ public class NoticiaService {
         }
     }
     
-    
-
     public String[] getNoticia(int i) {
         if (i >= 0 && i < noticias.size()) {
             // Suponiendo que cada elemento en la lista 'noticias' es de tipo Noticia
