@@ -101,15 +101,13 @@ public class NoticiaService {
             for (int i = 0; i < noticia.length - 2; i++) { // Evita mostrar los dos últimos elementos (puntuación y precio)
                 System.out.print(noticia[i] + " ");
             }
-            System.out.println(); // Nueva línea después de cada noticia
+            System.out.println(); 
         }
     }
     
-    
-
     public String[] getNoticia(int i) {
-        if (i >= 0 && i < noticias.size()) {
-            // Suponiendo que cada elemento en la lista 'noticias' es de tipo Noticia
+        
+        if (i >= 0 && i < noticias.size()) {          
             return noticias.get(i);
         } else {
             System.out.println("Índice fuera de rango.");
@@ -117,5 +115,4 @@ public class NoticiaService {
         }
     }
     
-   
 }
