@@ -22,7 +22,8 @@ public class Menu {
             System.out.println("3.- Introducir noticia.");
             System.out.println("4.- Eliminar noticia.");
             System.out.println("5.- Mostrar todas las noticias por redactor.");
-            System.out.println("6.- Salir.");
+            System.out.println("6.-Calcular precio y puntuacion de la noticia.");
+            System.out.println("7.- Salir.");
 
             System.out.print("Escoge una opción: ");
             opcion = scanner.nextInt();
@@ -47,14 +48,41 @@ public class Menu {
                     mostrarNoticiasPorRedactor();
                     break;
                 case 6:
+                    calcularNoticia();
+                    break;
+                case 7:
                     System.out.println("Saliendo...");
                     break;
                 default:
                     System.out.println("Opción no válida, por favor intenta de nuevo.");
                     break;
             }
-        } while (opcion != 6);
+        } while (opcion != 7);
     }
+
+    private void calcularNoticia() {
+        noticiaService.listarNoticias();
+        System.out.print("Elige el número de la noticia para ver la puntuación y el precio: ");
+        int eleccion = scanner.nextInt();
+        scanner.nextLine(); // Limpiar el buffer
+    
+        String[] noticiaSeleccionada = noticiaService.getNoticia(eleccion - 1);
+        if (noticiaSeleccionada != null) {
+            // Los dos últimos elementos son precio y puntuación
+            String precio = noticiaSeleccionada[noticiaSeleccionada.length - 2];
+            String puntuacion = noticiaSeleccionada[noticiaSeleccionada.length - 1];
+            System.out.println("Precio de la noticia: " + precio);
+            System.out.println("Puntuación de la noticia: " + puntuacion);
+        } else {
+            System.out.println("Noticia no encontrada.");
+        }
+    }
+    
+    
+    
+    
+
+   
 
     private void agregarRedactor() {
         System.out.println("Lista de redactores antes de añadir uno nuevo:");

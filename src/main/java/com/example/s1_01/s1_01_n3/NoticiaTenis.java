@@ -3,19 +3,19 @@ package com.example.s1_01.s1_01_n3;
 import java.util.Scanner;
 
 public class NoticiaTenis extends Noticia {
-    private boolean esFedererNadalDjokovic;
+    
     private String competicion;
     private String tenistas;
     private String texto;
     
 
    
-    public NoticiaTenis(String titular, String redactor, String texto, String competicion, String tenistas, boolean esFedererNadalDjokovic) {
+    public NoticiaTenis(String titular, String redactor, String texto, String competicion, String tenistas, String jugador) {
         super(titular, redactor); // Llama al constructor de la clase madre
         this.texto = texto;
         this.competicion = competicion;
         this.tenistas = tenistas;
-        this.esFedererNadalDjokovic = esFedererNadalDjokovic;
+        
     }
      public NoticiaTenis(){
         
@@ -26,7 +26,7 @@ public class NoticiaTenis extends Noticia {
     public  int calcularPuntuacion() {
         int puntuacionTenis = 4;
 
-        if (esFedererNadalDjokovic) {
+        if ("Federer".equals(tenistas) || "Nadal".equals(tenistas)|| "Djokovic".equals(tenistas)){
             puntuacionTenis += 3; // 3 puntos por Federer, Nadal o Djokovic
         }
 
@@ -36,7 +36,7 @@ public class NoticiaTenis extends Noticia {
     public double calcularPrecioNoticia() {
         double precioNoticia = 150.0;
 
-        if (esFedererNadalDjokovic) {
+        if ("Federer".equals(tenistas) || "Nadal".equals(tenistas)|| "Djokovic".equals(tenistas)) {
             precioNoticia += 100; // 100€ por Federer, Nadal o Djokovic
         }
 
@@ -54,10 +54,9 @@ public class NoticiaTenis extends Noticia {
         String competicion = scanner.nextLine();
         System.out.print("Introduce los tenistas involucrados: ");
         String tenistas = scanner.nextLine();
-        System.out.print("¿La noticia es sobre Federer, Nadal o Djokovic? (si/no): ");
-        esFedererNadalDjokovic = scanner.nextLine().equalsIgnoreCase("si");
         String[] datosNoticia = {redactor,"tenis",titular, texto, competicion,
-         tenistas,String.valueOf(calcularPrecioNoticia()),String.valueOf(calcularPuntuacion())};
+        tenistas,String.valueOf(calcularPrecioNoticia()), 
+        String.valueOf(calcularPuntuacion())};
         return datosNoticia;
     }
     @Override
