@@ -34,7 +34,7 @@ Esto generará los archivos `.class` correspondientes en el mismo directorio de 
 
 Para ejecutar el programa `ConfiguracionEjecutor`, sigue estos pasos:
 
-1. Asegúrate de estar todavía en el directorio `C:\Users\oscar\Desktop\Nueva carpeta\demo\src\main\java`.
+1. Asegúrate de estar en el directorio `demo\src\main\java`.
 2. Ejecuta el siguiente comando:
 
    ```cmd
