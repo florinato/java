@@ -45,15 +45,18 @@
 			<version>5.7.0</version> <!-- o la versión que prefieras -->
 			<scope>test</scope>
 		</dependency>
-		
-		
-	
+			
    <dependency>
      <groupId>foundation.icon</groupId>
      <artifactId>javaee-scorex</artifactId>
      <version>0.5.4.1</version>
    </dependency>
- 
+   
+   <dependency>
+	<groupId>mysql</groupId>
+	<artifactId>mysql-connector-java</artifactId>
+	<version>8.0.28</version> <!-- Usa la última versión disponible -->
+	</dependency>
   
  
    <dependency>
