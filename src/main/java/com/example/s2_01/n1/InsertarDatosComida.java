@@ -280,15 +280,20 @@ private static void ProductosVendidosCategoriaYTienda(Connection conexion, int i
     }
 }
 private static void contarPedidosPorEmpleado(Connection conexion, int idEmpleado) {
-    String sql = "SELECT COUNT(*) AS CantidadPedidos FROM Pedidos WHERE id_empleado_repartidor = ?";
+    String sql = "SELECT E.nombre, COUNT(P.id_pedido) AS CantidadPedidos " +
+                 "FROM Pedidos P " +
+                 "JOIN Empleados E ON P.id_empleado_repartidor = E.id_empleado " +
+                 "WHERE E.id_empleado = ? " +
+                 "GROUP BY E.nombre";
 
     try (PreparedStatement preparedStatement = conexion.prepareStatement(sql)) {
         preparedStatement.setInt(1, idEmpleado);
 
         ResultSet resultSet = preparedStatement.executeQuery();
         if (resultSet.next()) {
+            String nombreEmpleado = resultSet.getString("nombre");
             int cantidadPedidos = resultSet.getInt("CantidadPedidos");
-            System.out.println("Cantidad de pedidos realizados por el empleado con ID '" + idEmpleado + "': " + cantidadPedidos);
+            System.out.println("Cantidad de pedidos realizados por el empleado '" + nombreEmpleado + "' (ID: " + idEmpleado + "): " + cantidadPedidos);
         }
     } catch (SQLException e) {
         e.printStackTrace();
