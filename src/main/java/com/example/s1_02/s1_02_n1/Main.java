@@ -2,23 +2,22 @@ package com.example.s1_02.s1_02_n1;
 
 public class Main {
     public static void main(String[] args) {
-        
         Venda venda = new Venda();
-        //venda.afegirProducte(new Producte("Manzana", 0.99));
-        //venda.afegirProducte(new Producte("Pera", 0.98));
         try {
             venda.calcularTotal();
-            
         } catch (VendaBuidaException e) {
-            
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
-        System.out.println("Preu total de la venda: " + venda.getPreuTotal());    
 
-            
-            
-           
-       
+        // Código para generar y capturar ArrayIndexOutOfBoundsException
+        try {
+            int[] arr = new int[5];
+            int num = arr[5]; // Esto generará ArrayIndexOutOfBoundsException
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Error: Se accedió a un índice fuera de los límites del arreglo.");
+        }
     }
 }
+
+
 

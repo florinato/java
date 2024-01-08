@@ -8,8 +8,7 @@ public class Venda {
     private double preuTotal;
 
     public Venda() {
-        this.productes = new ArrayList<>();
-        this.preuTotal = 0.0;
+        productes = new ArrayList<>();
     }
 
     public void afegirProducte(Producte producte) {
@@ -20,15 +19,18 @@ public class Venda {
         if (productes.isEmpty()) {
             throw new VendaBuidaException("Per fer una venda primer has d’afegir productes");
         }
-        preuTotal = 0.0;
+        preuTotal = 0;
         for (Producte producte : productes) {
             preuTotal += producte.getPreu();
         }
     }
 
     // Getters y setters
+    public List<Producte> getProductes() {
+        return productes;
+    }
+
     public double getPreuTotal() {
         return preuTotal;
     }
 }
-

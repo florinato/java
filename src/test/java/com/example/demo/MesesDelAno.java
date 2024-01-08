@@ -1,4 +1,4 @@
-package com.example.s1_04.n1_1;
+package com.example.demo;
 
 import java.util.ArrayList;
 import java.util.List;

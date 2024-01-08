@@ -37,27 +37,48 @@
 			<version>5.7.0</version>
 			<scope>test</scope>
 		</dependency>
-	
-		<!-- Este es el motor de ejecución para JUnit Jupiter -->
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest</artifactId>
+			<version>2.2</version>
+			<scope>test</scope>
+		</dependency>
+		
+		
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
 			<version>5.7.0</version> <!-- o la versión que prefieras -->
 			<scope>test</scope>
 		</dependency>
-			
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-launcher</artifactId>
+			<version>1.7.0</version>
+			<scope>test</scope>
+		</dependency>	
    <dependency>
      <groupId>foundation.icon</groupId>
      <artifactId>javaee-scorex</artifactId>
      <version>0.5.4.1</version>
    </dependency>
-   
+   <dependency>
+	<groupId>org.junit.jupiter</groupId>
+	<artifactId>junit-jupiter-params</artifactId>
+	<version>5.7.0</version>
+	<scope>test</scope>
+</dependency>
    <dependency>
 	<groupId>mysql</groupId>
 	<artifactId>mysql-connector-java</artifactId>
 	<version>8.0.28</version> <!-- Usa la última versión disponible -->
 	</dependency>
-  
+	<dependency>
+		<groupId>org.assertj</groupId>
+		<artifactId>assertj-core</artifactId>
+		<version>3.19.0</version> <!-- Asegúrate de utilizar la última versión -->
+		<scope>test</scope>
+	</dependency>
  
    <dependency>
      <groupId>com.google.code.gson</groupId>
