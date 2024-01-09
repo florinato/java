@@ -1,4 +1,4 @@
-package com.example.s2_01.n1;
+package com.example.s2_01.n2;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -294,12 +294,6 @@ private static final String URL = "jdbc:mysql://localhost:3306/Yutube";
     
         preparedStatement.close();
     }
-       
-    
-    
-        
-            
-    
-        
-    }
+
+}
     

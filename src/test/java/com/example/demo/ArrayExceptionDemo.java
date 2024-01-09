@@ -1,5 +1,5 @@
 package com.example.demo;
-
+@SuppressWarnings("unused")
 public class ArrayExceptionDemo {
 
     public void lanzarExcepcion() {

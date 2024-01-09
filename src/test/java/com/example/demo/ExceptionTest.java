@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+@SuppressWarnings("unused")
 public class ExceptionTest {
     @Test
     public void testException() {
