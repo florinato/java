@@ -15,8 +15,7 @@ public abstract class Treballador {
 
     public double calcularSou(int horesTreballades) {
         return horesTreballades * preuHora;
-    }
-
-    
+    } 
+      
 }
 

@@ -1,6 +1,14 @@
 package com.example.s1_07.n1;
 
 public class Principal {
+
+    @SuppressWarnings("deprecation")
+    public void usarMetodosObsoletos(TreballadorOnline treballadorOnline, TreballadorPresencial treballadorPresencial) {
+        treballadorOnline.metodoAntiguoOnline();
+        treballadorPresencial.metodoAntiguoPresencial();
+    }
+
+
     public static void main(String[] args) {
         // Crear un trabajador online
         TreballadorOnline treballadorOnline = new TreballadorOnline("Oscar", "Programador", 20.0);
@@ -22,10 +30,6 @@ public class Principal {
         principal.usarMetodosObsoletos(treballadorOnline, treballadorPresencial);
     }
 
-    @SuppressWarnings("deprecation")
-    public void usarMetodosObsoletos(TreballadorOnline treballadorOnline, TreballadorPresencial treballadorPresencial) {
-        treballadorOnline.metodoAntiguoOnline();
-        treballadorPresencial.metodoAntiguoPresencial();
-    }
+    
 }
 
