@@ -5,11 +5,13 @@ import java.util.Scanner;
 public class NoticiaMotociclismo extends Noticia {
     private String equipo;
     private String texto;
+    private String seccion="Motociclismo";
 
-    public NoticiaMotociclismo(String titular, String redactor, String texto, String equipo) {
-        super(titular, redactor); // Llama al constructor de la clase madre
+    public NoticiaMotociclismo(String seccion,String redactor, String titular,  String texto, String equipo) {
+        super(titular, redactor); 
         this.texto = texto;
         this.equipo = equipo;
+        this.seccion=  seccion;
     }
 
     public NoticiaMotociclismo() {
@@ -29,7 +31,7 @@ public class NoticiaMotociclismo extends Noticia {
 
     @Override
     public double calcularPrecioNoticia() {
-        double precioNoticia = 100.0;
+        int precioNoticia = 100;
 
         if ("Honda".equals(equipo) || "Yamaha".equals(equipo)) {
             precioNoticia += 50;
@@ -50,13 +52,12 @@ public class NoticiaMotociclismo extends Noticia {
         String equipo = scanner.nextLine();
 
         String[] datosNoticia = {
+            seccion, 
             redactor, 
-            "motociclismo", 
             titular, 
             texto, 
             equipo, 
-            String.valueOf(calcularPrecioNoticia()), 
-            String.valueOf(calcularPuntuacion())
+            
         };
         return datosNoticia;
     }
@@ -64,17 +65,15 @@ public class NoticiaMotociclismo extends Noticia {
     @Override
     public String[] crearNoticia() {
         String[] datosNoticia = {
-            redactor, 
-            "motociclismo", 
+            seccion,
+            redactor,  
             titular, 
             texto, 
             equipo, 
-            String.valueOf(calcularPrecioNoticia()), 
-            String.valueOf(calcularPuntuacion())
         };
         return datosNoticia;
     }
 
-    // Métodos getters y setters para equipo pueden ser añadidos aquí
+    
 }
 

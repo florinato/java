@@ -9,7 +9,7 @@ public class ListadorDeDirectorio {
         File directorio = new File(rutaDirectorio);
         if (!directorio.isDirectory()) {
             System.out.println("El argumento proporcionado no es un directorio válido.");
-            return;
+            
         }
 
         String[] archivos = directorio.list();

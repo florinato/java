@@ -80,35 +80,7 @@ public class Entrada {
             }
         }
     } 
-    public static void main(String[] args) {
-        
-        byte unByte = llegirByte("Introdueix un número byte:");
-        System.out.println("El número byte introduït és: " + unByte);
-
-        // Ejemplo para llegirInt
-        int unEntero = llegirInt("Introdueix un número enter:");
-        System.out.println("El número enter introduït és: " + unEntero);
-
-        // Ejemplo para llegirFloat
-        float unFloat = llegirFloat("Introdueix un número float:");
-        System.out.println("El número float introduït és: " + unFloat);
-
-        // Ejemplo para llegirDouble
-        double unDouble = llegirDouble("Introdueix un número double:");
-        System.out.println("El número double introduït és: " + unDouble);
-
-        // Ejemplo para llegirChar
-        char unCaracter = llegirChar("Introdueix un caràcter:");
-        System.out.println("El caràcter introduït és: " + unCaracter);
-
-        // Ejemplo para llegirString
-        String unaCadena = llegirString("Introdueix una cadena de text:");
-        System.out.println("La cadena de text introduïda és: " + unaCadena);
-
-        // Ejemplo para llegirSiNo
-        boolean siNo = llegirSiNo("Introdueix 's' per Sí o 'n' per No:");
-        System.out.println("Has introduït: " + (siNo ? "Sí" : "No"));
-    }
+    
        
 }
    

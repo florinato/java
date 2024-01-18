@@ -7,13 +7,15 @@ public class NoticiaFutbol extends Noticia {
     private String club;
     private String jugador;
     private String texto;
+    private String seccion="Futbol";
 
-    public NoticiaFutbol(String titular, String redactor, String texto, String competicion, String club, String jugador) {
+    public NoticiaFutbol(String seccion,String redactor, String titular,  String texto, String competicion, String club, String jugador) {
         super(titular, redactor); // Llama al constructor de la clase madre
         this.texto = texto;
         this.competicion = competicion;
         this.club = club;
         this.jugador = jugador;
+        this.seccion=  seccion;
     }
 
     public NoticiaFutbol() {
@@ -76,15 +78,13 @@ public String[] crearNoticia(Scanner scanner) {
     String jugador = scanner.nextLine();
 
     String[] datosNoticia = {
-        redactor, 
-        "futbol", 
+        seccion, 
+        redactor,  
         titulo, 
         texto, 
         competicion, 
         club, 
         jugador, 
-        String.valueOf(calcularPrecioNoticia()), 
-        String.valueOf(calcularPuntuacion())
     };
     return datosNoticia;
 }
@@ -92,15 +92,13 @@ public String[] crearNoticia(Scanner scanner) {
 @Override
 public String[] crearNoticia() {
     String[] datosNoticia = {
-        redactor, 
-        "futbol", 
+        seccion,
+        redactor,  
         titular, 
         texto, 
         competicion, 
         club, 
         jugador, 
-        String.valueOf(calcularPrecioNoticia()), 
-        String.valueOf(calcularPuntuacion())
     };
     return datosNoticia;
 }

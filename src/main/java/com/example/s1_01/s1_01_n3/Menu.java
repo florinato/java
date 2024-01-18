@@ -22,8 +22,9 @@ public class Menu {
             System.out.println("3.- Introducir noticia.");
             System.out.println("4.- Eliminar noticia.");
             System.out.println("5.- Mostrar todas las noticias por redactor.");
-            System.out.println("6.-Calcular precio y puntuacion de la noticia.");
-            System.out.println("7.- Salir.");
+            System.out.println("6.-Calcular  puntuacion de la noticia.");
+            System.out.println("7.-Calcular  precio de la noticia.");
+            System.out.println("8.- Salir.");
 
             System.out.print("Escoge una opción: ");
             opcion = scanner.nextInt();
@@ -48,34 +49,171 @@ public class Menu {
                     mostrarNoticiasPorRedactor();
                     break;
                 case 6:
-                    calcularNoticia();
+                    calcularPuntuacionNoticia();
                     break;
                 case 7:
+                    calcularPrecioNoticia();
+                    break;
+                case 8:
                     System.out.println("Saliendo...");
                     break;
                 default:
                     System.out.println("Opción no válida, por favor intenta de nuevo.");
                     break;
             }
-        } while (opcion != 7);
+        } while (opcion != 8);
     }
 
-    private void calcularNoticia() {
+    private void calcularPrecioNoticia() {
+        noticiaService.listarNoticias();
+        System.out.print("Elige el número de la noticia para ver el precio: ");
+        int eleccion = scanner.nextInt();
+        scanner.nextLine(); // Limpiar el buffer
+        double precio;
+        String[] noticiaSeleccionada = noticiaService.getNoticia(eleccion - 1);
+         
+
+        switch (noticiaSeleccionada[0]) {
+            case "Futbol":
+                NoticiaFutbol noticiaFutbol = new NoticiaFutbol(
+                    noticiaSeleccionada[0], 
+                    noticiaSeleccionada[1], 
+                    noticiaSeleccionada[2], 
+                    noticiaSeleccionada[3],
+                    noticiaSeleccionada[4],
+                    noticiaSeleccionada[5],
+                    noticiaSeleccionada[6]
+                    
+                );
+                precio =  noticiaFutbol.calcularPrecioNoticia();
+                break;
+            case "Tenis":
+                NoticiaTenis noticiaTenis = new NoticiaTenis(
+                    noticiaSeleccionada[0], 
+                    noticiaSeleccionada[1], 
+                    noticiaSeleccionada[2], 
+                    noticiaSeleccionada[3],
+                    noticiaSeleccionada[4], 
+                    noticiaSeleccionada[5],
+                    noticiaSeleccionada[6]
+                );
+                precio = noticiaTenis.calcularPrecioNoticia();
+                break;
+            case "F1":
+                NoticiaF1 noticiaF1 = new NoticiaF1(
+                    noticiaSeleccionada[0], 
+                    noticiaSeleccionada[1], 
+                    noticiaSeleccionada[2], 
+                    noticiaSeleccionada[3],
+                    noticiaSeleccionada[4]
+                );
+                precio = noticiaF1.calcularPrecioNoticia();
+                break;
+            case "Motociclismo":
+                NoticiaMotociclismo noticiaMotociclismo = new NoticiaMotociclismo(
+                    noticiaSeleccionada[0], 
+                    noticiaSeleccionada[1], 
+                    noticiaSeleccionada[2], 
+                    noticiaSeleccionada[3],
+                    noticiaSeleccionada[4]
+                );
+                precio = noticiaMotociclismo.calcularPrecioNoticia();
+                break;
+            case "Basquet":
+                NoticiaBasquet noticiaBasquet = new NoticiaBasquet(
+                    noticiaSeleccionada[0], 
+                    noticiaSeleccionada[1], 
+                    noticiaSeleccionada[2], 
+                    noticiaSeleccionada[3],
+                    noticiaSeleccionada[4],
+                    noticiaSeleccionada[5]
+                );
+                precio = noticiaBasquet.calcularPrecioNoticia();
+                break;
+            default:
+                System.out.println("Tipo de noticia no reconocido");
+                return;
+        }
+        
+        System.out.println("La precio de la noticia es: " + precio);
+        
+    }
+        
+    
+
+    private void calcularPuntuacionNoticia() {
         noticiaService.listarNoticias();
         System.out.print("Elige el número de la noticia para ver la puntuación y el precio: ");
         int eleccion = scanner.nextInt();
         scanner.nextLine(); // Limpiar el buffer
-    
+        int puntuacion;
         String[] noticiaSeleccionada = noticiaService.getNoticia(eleccion - 1);
-        if (noticiaSeleccionada != null) {
-            // Los dos últimos elementos son precio y puntuación
-            String precio = noticiaSeleccionada[noticiaSeleccionada.length - 2];
-            String puntuacion = noticiaSeleccionada[noticiaSeleccionada.length - 1];
-            System.out.println("Precio de la noticia: " + precio);
-            System.out.println("Puntuación de la noticia: " + puntuacion);
-        } else {
-            System.out.println("Noticia no encontrada.");
+         
+
+        switch (noticiaSeleccionada[0]) {
+            case "Futbol":
+                NoticiaFutbol noticiaFutbol = new NoticiaFutbol(
+                    noticiaSeleccionada[0], 
+                    noticiaSeleccionada[1], 
+                    noticiaSeleccionada[2], 
+                    noticiaSeleccionada[3],
+                    noticiaSeleccionada[4],
+                    noticiaSeleccionada[5],
+                    noticiaSeleccionada[6]
+                    
+                );
+                puntuacion = noticiaFutbol.calcularPuntuacion();
+                break;
+            case "Tenis":
+                NoticiaTenis noticiaTenis = new NoticiaTenis(
+                    noticiaSeleccionada[0], 
+                    noticiaSeleccionada[1], 
+                    noticiaSeleccionada[2], 
+                    noticiaSeleccionada[3],
+                    noticiaSeleccionada[4], 
+                    noticiaSeleccionada[5],
+                    noticiaSeleccionada[6]
+                );
+                puntuacion = noticiaTenis.calcularPuntuacion();
+                break;
+            case "F1":
+                NoticiaF1 noticiaF1 = new NoticiaF1(
+                    noticiaSeleccionada[0], 
+                    noticiaSeleccionada[1], 
+                    noticiaSeleccionada[2], 
+                    noticiaSeleccionada[3],
+                    noticiaSeleccionada[4]
+                );
+                puntuacion = noticiaF1.calcularPuntuacion();
+                break;
+            case "Motociclismo":
+                NoticiaMotociclismo noticiaMotociclismo = new NoticiaMotociclismo(
+                    noticiaSeleccionada[0], 
+                    noticiaSeleccionada[1], 
+                    noticiaSeleccionada[2], 
+                    noticiaSeleccionada[3],
+                    noticiaSeleccionada[4]
+                );
+                puntuacion = noticiaMotociclismo.calcularPuntuacion();
+                break;
+            case "Basquet":
+                NoticiaBasquet noticiaBasquet = new NoticiaBasquet(
+                    noticiaSeleccionada[0], 
+                    noticiaSeleccionada[1], 
+                    noticiaSeleccionada[2], 
+                    noticiaSeleccionada[3],
+                    noticiaSeleccionada[4],
+                    noticiaSeleccionada[5]
+                );
+                puntuacion = noticiaBasquet.calcularPuntuacion();
+                break;
+            default:
+                System.out.println("Tipo de noticia no reconocido");
+                return;
         }
+        
+        System.out.println("La puntuación de la noticia es: " + puntuacion);
+        
     }
     
     
@@ -173,8 +311,8 @@ public class Menu {
     }
     private void eliminarNoticia() {
         System.out.print("Introduce el nombre del redactor de la noticia a eliminar: ");
-        String nombreRedactor = scanner.nextLine();
-        noticiaService.eliminarNoticia(nombreRedactor);
+        
+        noticiaService.listarYEliminarNoticia();
     }
     private void mostrarNoticiasPorRedactor() {
         System.out.print("Introduce el nombre del redactor: ");
@@ -187,12 +325,12 @@ public class Menu {
         redactorService.agregarRedactor(new Redactor("Ana", "2"));
 
         // Crear y agregar algunas noticias
-        NoticiaF1 noticia1 = new NoticiaF1("Gana Hamilton en Mónaco", "Juan", "Texto de la noticia...", "Mercedes");
-        NoticiaF1 noticia2 = new NoticiaF1("Ferrari lidera entrenamientos", "Ana", "Texto de la noticia...",
+        NoticiaF1 noticia1 = new NoticiaF1("F1","Gana Hamilton en Mónaco", "Juan", "Texto de la noticia...", "Mercedes");
+        NoticiaF1 noticia2 = new NoticiaF1("F1","Ferrari lidera entrenamientos", "Ana", "Texto de la noticia...",
                 "Ferrari");
-        NoticiaF1 noticia3 = new NoticiaF1("Nuevo récord de vuelta", "Carlos", "Texto de la noticia...",
+        NoticiaF1 noticia3 = new NoticiaF1("F1","Nuevo récord de vuelta", "Carlos", "Texto de la noticia...",
                 "Red Bull");
-        NoticiaF1 noticia4 = new NoticiaF1("Sorpresas en la clasificación", "Laura", "Texto de la noticia...",
+        NoticiaF1 noticia4 = new NoticiaF1("F1","Sorpresas en la clasificación", "Laura", "Texto de la noticia...",
                 "McLaren");
         noticiaService.agregarNoticia(noticia1.crearNoticia());       
         String [] datosNoticia2= noticia2. crearNoticia();

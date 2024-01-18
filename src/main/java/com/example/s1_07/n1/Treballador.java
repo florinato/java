@@ -1,11 +1,10 @@
 package com.example.s1_07.n1;
-@SuppressWarnings("unused")
+
 public abstract class Treballador {
     
-    private String nom;
-    
-    private String cognom;
-    private double preuHora;
+    protected String nom;  
+    protected String cognom;
+    protected double preuHora;
 
     public Treballador(String nom, String cognom, double preuHora) {
         this.nom = nom;

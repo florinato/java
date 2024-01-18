@@ -17,70 +17,47 @@ public class NoticiaService {
         noticias.add(noticia);
     }
 
-    public void eliminarNoticia(String nombreRedactor) {
-        System.out.println("Noticias del redactor: " + nombreRedactor);
-        int contador = 0;
-        for (int i = 0; i < noticias.size(); i++) {
-            if (noticias.get(i)[0].equals(nombreRedactor)) {
-                contador++;
-                // Construir la cadena de la noticia sin los dos últimos elementos
-                String[] noticia = noticias.get(i);
-                StringBuilder noticiaSinPrecioPuntuacion = new StringBuilder();
-                for (int j = 0; j < noticia.length - 2; j++) {
-                    noticiaSinPrecioPuntuacion.append(noticia[j]);
-                    if (j < noticia.length - 3) {
-                        noticiaSinPrecioPuntuacion.append(", ");
-                    }
-                }
-                System.out.println(contador + ": " + noticiaSinPrecioPuntuacion);
-            }
-        }
-    
-        if (contador == 0) {
-            System.out.println("No hay noticias para este redactor.");
-            return;
-        }
+    public void listarYEliminarNoticia() {
+        System.out.println("Listado de todas las noticias:");
+        listarNoticias();
+        
     
         System.out.print("Elige el número de la noticia a eliminar: ");
         int eleccion = scanner.nextInt();
         scanner.nextLine(); // Limpiar el buffer
     
-        if (eleccion > 0 && eleccion <= contador) {
-            eliminarNoticiaPorIndice(nombreRedactor, eleccion);
+        if (eleccion > 0 && eleccion <= noticias.size()) {
+            eliminarNoticiaPorIndice(eleccion); // Ajuste del índice debido a que la lista comienza en 0
+        } else {
+            System.out.println("Número de noticia inválido.");
+        }
+        listarNoticias();
+    }
+    
+    
+
+    private void eliminarNoticiaPorIndice(int eleccion) {
+        if (eleccion > 0 && eleccion <= noticias.size()) {
+            noticias.remove(eleccion - 1); 
+            System.out.println("Noticia eliminada.");
         } else {
             System.out.println("Número de noticia inválido.");
         }
     }
     
-
-    private void eliminarNoticiaPorIndice(String nombreRedactor, int eleccion) {
-        int contador = 0;
-        for (int i = 0; i < noticias.size(); i++) {
-            if (noticias.get(i)[0].equals(nombreRedactor)) {
-                contador++;
-                if (contador == eleccion) {
-                    noticias.remove(i);
-                    System.out.println("Noticia eliminada.");
-                    return;
-                }
-            }
-        }
-    }
     public void mostrarNoticiasPorRedactor(String nombreRedactor) {
         System.out.println("Noticias del redactor: " + nombreRedactor);
         int contador = 0;
         for (String[] noticia : noticias) {
-            if (noticia[0].equals(nombreRedactor)) {
-                contador++;
-                StringBuilder noticiaSinPrecioPuntuacion = new StringBuilder();
-                noticiaSinPrecioPuntuacion.append(contador).append(": ");
-                for (int i = 0; i < noticia.length - 2; i++) {
-                    noticiaSinPrecioPuntuacion.append(noticia[i]);
-                    if (i < noticia.length - 3) {
-                        noticiaSinPrecioPuntuacion.append(", ");
+            if (noticia[1].equals(nombreRedactor)) { 
+                System.out.print(++contador + ": ");
+                for (int i = 0; i < noticia.length; i++) {
+                    System.out.print(noticia[i]);
+                    if (i < noticia.length - 1) {
+                        System.out.print(", ");
                     }
                 }
-                System.out.println(noticiaSinPrecioPuntuacion);
+                System.out.println();
             }
         }
     
@@ -97,8 +74,8 @@ public class NoticiaService {
         System.out.println("Listado de todas las noticias:");
         int numeroNoticia = 1;
         for (String[] noticia : noticias) {
-            System.out.print(numeroNoticia++ + ": "); // Mostrar el número de la noticia
-            for (int i = 0; i < noticia.length - 2; i++) { // Evita mostrar los dos últimos elementos (puntuación y precio)
+            System.out.print(numeroNoticia++ + ": "); 
+            for (int i = 0; i < noticia.length; i++) { 
                 System.out.print(noticia[i] + " ");
             }
             System.out.println(); 

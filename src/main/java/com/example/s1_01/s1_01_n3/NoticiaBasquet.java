@@ -3,15 +3,16 @@ package com.example.s1_01.s1_01_n3;
 import java.util.Scanner;
 
 public class NoticiaBasquet extends Noticia {
-  private String competicion;
+    private String competicion;
     private String club;
     private String texto;
-
-    public NoticiaBasquet(String titular, String redactor, String texto, String competicion, String club) {
+    private String seccion="Basquet";
+    public NoticiaBasquet(String seccion,String redactor, String titular,  String texto, String competicion, String club) {
         super(titular, redactor); // Llama al constructor de la clase madre
         this.texto = texto;
         this.competicion = competicion;
         this.club = club;
+        this.seccion=seccion;
     }
 
     public NoticiaBasquet() {
@@ -64,14 +65,14 @@ public class NoticiaBasquet extends Noticia {
         String club = scanner.nextLine();
 
         String[] datosNoticia = {
+            seccion,
             redactor, 
-            "Básquet", 
+            seccion, 
             titular, 
             texto, 
             competicion, 
-            club, 
-            String.valueOf(calcularPrecioNoticia()), 
-            String.valueOf(calcularPuntuacion())
+            club 
+            
         };
         return datosNoticia;
     }
@@ -79,17 +80,16 @@ public class NoticiaBasquet extends Noticia {
     @Override
     public String[] crearNoticia() {
         String[] datosNoticia = {
+            seccion,
             redactor, 
-            "Básquet", 
+            seccion, 
             titular, 
             texto, 
             competicion, 
-            club, 
-            String.valueOf(calcularPrecioNoticia()), 
-            String.valueOf(calcularPuntuacion())
+            club
         };
         return datosNoticia;
     }
 
-    // Métodos getters y setters para competicion y club pueden ser añadidos aquí
+    
 }

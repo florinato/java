@@ -2,25 +2,26 @@ package com.example.s1_01.s1_01_n1_2;
 
 public class Cotxe {
     // Atributos
-    static final String marca = "Toyota";
-    String model;
-    int potencia;
+    static final String marca = "Toyota"; // Constante de la clase
+    static String model; // Atributo estático
+    final int potencia; // Atributo final
 
     // Constructor
-    public Cotxe(String model, int potencia) {
-        this.model = model;
-        this.potencia = potencia;
+    private Cotxe(String model, int potencia) {
+        Cotxe.model = model; // Asignación al atributo estático
+        this.potencia = potencia; // Inicialización del atributo final
     }
 
     // Método estático para frenar
-    public static void frenar() {
+    private static void frenar() {
         System.out.println("El vehicle està frenant");
     }
 
     // Método no estático para acelerar
-    public static void accelerar() {
+    private void accelerar() {
         System.out.println("El vehicle està accelerant");
     }
+
     // Método toString para mostrar las características del coche
     @Override
     public String toString() {
@@ -36,7 +37,7 @@ public class Cotxe {
         Cotxe.frenar();
 
         // Invocación del método no estático accelerar() desde una instancia de la clase
-        Cotxe.accelerar();
+        coche.accelerar();
     }
 }
 

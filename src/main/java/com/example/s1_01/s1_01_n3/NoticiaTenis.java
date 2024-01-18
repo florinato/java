@@ -3,19 +3,19 @@ package com.example.s1_01.s1_01_n3;
 import java.util.Scanner;
 
 public class NoticiaTenis extends Noticia {
-    
+    private String seccion="Tenis";
     private String competicion;
     private String tenistas;
     private String texto;
     
 
    
-    public NoticiaTenis(String titular, String redactor, String texto, String competicion, String tenistas, String jugador) {
+    public NoticiaTenis(String seccion,String redactor, String titular,  String texto, String competicion, String tenistas, String jugador) {
         super(titular, redactor); // Llama al constructor de la clase madre
         this.texto = texto;
         this.competicion = competicion;
         this.tenistas = tenistas;
-        
+        this.seccion=  seccion;
     }
      public NoticiaTenis(){
         
@@ -34,7 +34,7 @@ public class NoticiaTenis extends Noticia {
     }
 
     public double calcularPrecioNoticia() {
-        double precioNoticia = 150.0;
+        double precioNoticia = 150;
 
         if ("Federer".equals(tenistas) || "Nadal".equals(tenistas)|| "Djokovic".equals(tenistas)) {
             precioNoticia += 100; // 100€ por Federer, Nadal o Djokovic
@@ -54,9 +54,8 @@ public class NoticiaTenis extends Noticia {
         String competicion = scanner.nextLine();
         System.out.print("Introduce los tenistas involucrados: ");
         String tenistas = scanner.nextLine();
-        String[] datosNoticia = {redactor,"tenis",titular, texto, competicion,
-        tenistas,String.valueOf(calcularPrecioNoticia()), 
-        String.valueOf(calcularPuntuacion())};
+        String[] datosNoticia = {redactor,seccion,titular, texto, competicion,
+        tenistas};
         return datosNoticia;
     }
     @Override
@@ -64,13 +63,11 @@ public class NoticiaTenis extends Noticia {
         
         String[] datosNoticia = {
             redactor, 
-            "tenis", 
+            seccion, 
             titular, 
             texto, 
             competicion, 
-            tenistas, 
-            String.valueOf(calcularPrecioNoticia()), 
-            String.valueOf(calcularPuntuacion())
+            tenistas
         };
         return datosNoticia;
     }
