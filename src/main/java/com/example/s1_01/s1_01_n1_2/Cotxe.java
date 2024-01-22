@@ -2,9 +2,9 @@ package com.example.s1_01.s1_01_n1_2;
 
 public class Cotxe {
     // Atributos
-    static final String marca = "Toyota"; // Constante de la clase
-    static String model; // Atributo estático
-    final int potencia; // Atributo final
+    private static final String marca = "Toyota"; // Constante de la clase
+    private static String model; // Atributo estático
+    private final int potencia; // Atributo final
 
     // Constructor
     private Cotxe(String model, int potencia) {
