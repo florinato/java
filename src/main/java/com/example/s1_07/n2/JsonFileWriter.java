@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class JsonFileWriter {
     public static void writeJsonToFile(String json, String directory, String filename) {
-        // Asegúrate de que el directorio termina con el separador de archivos correcto
+        
         if (!directory.endsWith(File.separator)) {
             directory += File.separator;
         }

@@ -5,10 +5,11 @@ public class Aplicacion {
     public static void main(String[] args) {
         if (args.length < 1) {
             System.out.println("Por favor, proporciona un directorio.");
-            return;
+            
         }
-
+        else{
         ListadorDeDirectorio listador = new ListadorDeDirectorio();
         listador.listarArchivosDelDirectorio(args[0]);
+        }
     }
 }

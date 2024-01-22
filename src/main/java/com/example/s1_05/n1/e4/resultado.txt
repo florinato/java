@@ -1,24 +1,24 @@
-D - n1 - 趌tima modificaci髇: 10/01/2024 12:21:18
-  D - e1 - 趌tima modificaci髇: 10/01/2024 12:19:55
-    F - MesesDelAno.java - 趌tima modificaci髇: 10/01/2024 12:19:56
-  D - e2 - 趌tima modificaci髇: 10/01/2024 12:20:37
-    F - CalculoDni.java - 趌tima modificaci髇: 10/01/2024 12:20:38
-  D - e3 - 趌tima modificaci髇: 10/01/2024 12:21:18
-    F - ArrayExceptionDemo.java - 趌tima modificaci髇: 10/01/2024 12:21:19
-D - n2 - 趌tima modificaci髇: 10/01/2024 11:15:28
-  F - StringLengthMatcher.java - 趌tima modificaci髇: 10/01/2024 11:15:14
-D - n3 - 趌tima modificaci髇: 10/01/2024 12:39:36
-  D - e1 - 趌tima modificaci髇: 10/01/2024 12:24:19
-    F - IntegerOperations.java - 趌tima modificaci髇: 10/01/2024 12:24:20
-  D - e2 - 趌tima modificaci髇: 10/01/2024 12:39:12
-    F - ReferenceOperations.java - 趌tima modificaci髇: 10/01/2024 12:39:13
-  D - e3 - 趌tima modificaci髇: 10/01/2024 12:28:42
-    F - ArrayOperations.java - 趌tima modificaci髇: 10/01/2024 12:28:43
-  D - e4 - 趌tima modificaci髇: 10/01/2024 12:37:48
-    F - ListManager.java - 趌tima modificaci髇: 10/01/2024 12:37:49
-  D - e5 - 趌tima modificaci髇: 10/01/2024 12:33:35
-    F - MapManager.java - 趌tima modificaci髇: 10/01/2024 12:33:36
-  D - e6 - 趌tima modificaci髇: 10/01/2024 12:39:36
-    F - ArrayAccessDemo.java - 趌tima modificaci髇: 10/01/2024 12:39:37
-  D - e7 - 趌tima modificaci髇: 10/01/2024 12:34:25
-    F - OptionalManager.java - 趌tima modificaci髇: 10/01/2024 12:34:26
+D - n1 - 脷ltima modificaci贸n: 10/01/2024 12:21:18
+  D - e1 - 脷ltima modificaci贸n: 10/01/2024 12:19:55
+    F - MesesDelAno.java - 脷ltima modificaci贸n: 10/01/2024 12:19:56
+  D - e2 - 脷ltima modificaci贸n: 10/01/2024 12:20:37
+    F - CalculoDni.java - 脷ltima modificaci贸n: 10/01/2024 12:20:38
+  D - e3 - 脷ltima modificaci贸n: 10/01/2024 12:21:18
+    F - ArrayExceptionDemo.java - 脷ltima modificaci贸n: 10/01/2024 12:21:19
+D - n2 - 脷ltima modificaci贸n: 10/01/2024 11:15:28
+  F - StringLengthMatcher.java - 脷ltima modificaci贸n: 10/01/2024 11:15:14
+D - n3 - 脷ltima modificaci贸n: 10/01/2024 12:39:36
+  D - e1 - 脷ltima modificaci贸n: 10/01/2024 12:24:19
+    F - IntegerOperations.java - 脷ltima modificaci贸n: 10/01/2024 12:24:20
+  D - e2 - 脷ltima modificaci贸n: 10/01/2024 12:39:12
+    F - ReferenceOperations.java - 脷ltima modificaci贸n: 10/01/2024 12:39:13
+  D - e3 - 脷ltima modificaci贸n: 10/01/2024 12:28:42
+    F - ArrayOperations.java - 脷ltima modificaci贸n: 10/01/2024 12:28:43
+  D - e4 - 脷ltima modificaci贸n: 10/01/2024 12:37:48
+    F - ListManager.java - 脷ltima modificaci贸n: 10/01/2024 12:37:49
+  D - e5 - 脷ltima modificaci贸n: 10/01/2024 12:33:35
+    F - MapManager.java - 脷ltima modificaci贸n: 10/01/2024 12:33:36
+  D - e6 - 脷ltima modificaci贸n: 10/01/2024 12:39:36
+    F - ArrayAccessDemo.java - 脷ltima modificaci贸n: 10/01/2024 12:39:37
+  D - e7 - 脷ltima modificaci贸n: 10/01/2024 12:34:25
+    F - OptionalManager.java - 脷ltima modificaci贸n: 10/01/2024 12:34:26

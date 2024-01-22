@@ -7,10 +7,14 @@ public class FiltroLetraO {
     public static void main(String[] args) {
         List<String> miLista = List.of("Hola", "Mundo", "Java", "Oscar", "Programación");
 
-        List<String> resultado = miLista.stream()
-                                        .filter(cadena -> cadena.contains("o"))
-                                        .collect(Collectors.toList());
+        List<String> resultado = filtrarPorLetraO(miLista);
 
         System.out.println(resultado);
+    }
+
+    private static List<String> filtrarPorLetraO(List<String> lista) {
+        return lista.stream()
+                    .filter(cadena -> cadena.toLowerCase().contains("o"))
+                    .collect(Collectors.toList());
     }
 }

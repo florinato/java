@@ -19,4 +19,4 @@ java -cp target/classes com.example.s1_05.n1.e2.Aplicacion [ruta_al_directorio]
 
 Por ejemplo:
 
-java -cp target/classes com.example.s1_05.n1.e1.Aplicacion src\main\java\com\example\s1_05
+java -cp target/classes com.example.s1_05.n1.e2.Aplicacion src\main\java\com\example\s1_05

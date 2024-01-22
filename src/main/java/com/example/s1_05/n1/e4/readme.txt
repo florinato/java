@@ -18,7 +18,7 @@ Para ejecutar el programa, use uno de los siguientes comandos, dependiendo de lo
 java -cp target/classes com.example.s1_05.n1.e4.Aplicacion [ruta_al_directorio] [nombre_del_archivo_de_salida]
 
 Por ejemplo:
-java -cp target/classes com.example.s1_05.n1.e4.Aplicacion src/main/java/com/example/s1_05/n1/e4 resultado.txt
+java -cp target/classes com.example.s1_05.n1.e4.Aplicacion src/main/java/com/example/s1_05/n1/e4/resultado.txt 
 
 2. Para leer y mostrar el contenido de un archivo TXT:
 java -cp target/classes com.example.s1_05.n1.e4.Aplicacion [ruta_al_archivo_TXT]

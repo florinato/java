@@ -8,9 +8,9 @@ class Calculadora {
         Operacion division = (a, b) -> b != 0 ? a / b : Float.NaN;
 
         // Ejemplos de uso
-        System.out.println("Suma: " + suma.operacio(10, 5)); // 15.0
-        System.out.println("Resta: " + resta.operacio(10, 5)); // 5.0
-        System.out.println("Multiplicación: " + multiplicacion.operacio(10, 5)); // 50.0
-        System.out.println("División: " + division.operacio(10, 5)); // 2.0
+        System.out.println("Suma: " + suma.operacio(10, 5)); 
+        System.out.println("Resta: " + resta.operacio(10, 5));
+        System.out.println("Multiplicación: " + multiplicacion.operacio(10, 5)); 
+        System.out.println("División: " + division.operacio(10, 5)); 
     }
 }

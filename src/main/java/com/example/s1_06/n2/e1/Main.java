@@ -1,4 +1,4 @@
-package com.example.s1_06.n2;
+package com.example.s1_06.n2.e1;
 import com.example.s1_06.n1.e2.Persona;
 public class Main {
     public static void main(String[] args) {

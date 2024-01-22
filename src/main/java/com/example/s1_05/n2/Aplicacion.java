@@ -7,14 +7,9 @@ import java.util.Properties;
 import com.example.s1_05.n1.e3.ListadorDeDirectorio;
 
 public class Aplicacion {
-    private static Properties cargarConfiguracion(String archivoConfig) {
+    private static Properties cargarConfiguracion(String archivoConfig) throws IOException {
         Properties prop = new Properties();
-        try {
-            prop.load(new FileInputStream(archivoConfig));
-        } catch (IOException e) {
-            System.out.println("Error al leer el archivo de configuración: " + e.getMessage());
-            return null;
-        }
+        prop.load(new FileInputStream(archivoConfig));
         return prop;
     }
     private static void ejecutarAplicacion(Properties prop) {
@@ -32,10 +27,12 @@ public class Aplicacion {
     }
 
     public static void main(String[] args) {
-        
-        Properties prop = cargarConfiguracion("src/main/java/config.properties");
-        ejecutarAplicacion(prop);
+        try {
+            Properties prop = cargarConfiguracion("src/main/java/config.properties");
+            ejecutarAplicacion(prop);
+        } catch (IOException e) {
+            System.out.println("Error al cargar la configuración: " + e.getMessage());
         }
-        
+    }
     }
    
