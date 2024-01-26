@@ -66,8 +66,7 @@ public class NoticiaBasquet extends Noticia {
 
         String[] datosNoticia = {
             seccion,
-            redactor, 
-            seccion, 
+            redactor,              
             titular, 
             texto, 
             competicion, 
@@ -82,7 +81,6 @@ public class NoticiaBasquet extends Noticia {
         String[] datosNoticia = {
             seccion,
             redactor, 
-            seccion, 
             titular, 
             texto, 
             competicion, 

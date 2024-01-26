@@ -10,7 +10,7 @@ public class NoticiaTenis extends Noticia {
     
 
    
-    public NoticiaTenis(String seccion,String redactor, String titular,  String texto, String competicion, String tenistas, String jugador) {
+    public NoticiaTenis(String seccion,String redactor, String titular,  String texto, String competicion, String tenistas) {
         super(titular, redactor); // Llama al constructor de la clase madre
         this.texto = texto;
         this.competicion = competicion;

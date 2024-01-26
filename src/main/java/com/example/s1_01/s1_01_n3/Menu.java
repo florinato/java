@@ -94,8 +94,7 @@ public class Menu {
                     noticiaSeleccionada[2], 
                     noticiaSeleccionada[3],
                     noticiaSeleccionada[4], 
-                    noticiaSeleccionada[5],
-                    noticiaSeleccionada[6]
+                    noticiaSeleccionada[5]    
                 );
                 precio = noticiaTenis.calcularPrecioNoticia();
                 break;
@@ -171,8 +170,7 @@ public class Menu {
                     noticiaSeleccionada[2], 
                     noticiaSeleccionada[3],
                     noticiaSeleccionada[4], 
-                    noticiaSeleccionada[5],
-                    noticiaSeleccionada[6]
+                    noticiaSeleccionada[5]
                 );
                 puntuacion = noticiaTenis.calcularPuntuacion();
                 break;
@@ -326,19 +324,40 @@ public class Menu {
 
         // Crear y agregar algunas noticias
         NoticiaF1 noticia1 = new NoticiaF1("F1","Gana Hamilton en Mónaco", "Juan", "Texto de la noticia...", "Mercedes");
-        NoticiaF1 noticia2 = new NoticiaF1("F1","Ferrari lidera entrenamientos", "Ana", "Texto de la noticia...",
-                "Ferrari");
-        NoticiaF1 noticia3 = new NoticiaF1("F1","Nuevo récord de vuelta", "Carlos", "Texto de la noticia...",
-                "Red Bull");
-        NoticiaF1 noticia4 = new NoticiaF1("F1","Sorpresas en la clasificación", "Laura", "Texto de la noticia...",
-                "McLaren");
-        noticiaService.agregarNoticia(noticia1.crearNoticia());       
-        String [] datosNoticia2= noticia2. crearNoticia();
-        noticiaService.agregarNoticia(datosNoticia2);
-        String [] datosNoticia3= noticia3. crearNoticia();
-        noticiaService.agregarNoticia(datosNoticia3);
-        String [] datosNoticia4= noticia4. crearNoticia();
-        noticiaService.agregarNoticia(datosNoticia4);
+        noticiaService.agregarNoticia(noticia1.crearNoticia());
         
+        NoticiaF1 noticia2 = new NoticiaF1("F1","Ferrari lidera entrenamientos", "Ana", "Texto de la noticia...","Ferrari");
+        noticiaService.agregarNoticia(noticia2.crearNoticia());        
+        
+        NoticiaF1 noticia3 = new NoticiaF1("F1","Nuevo récord de vuelta", "Carlos", "Texto de la noticia...","Red Bull");
+        noticiaService.agregarNoticia(noticia3. crearNoticia());
+        
+        NoticiaF1 noticia4 = new NoticiaF1("F1","Sorpresas en la clasificación", "Laura", "Texto de la noticia...","McLaren");
+        noticiaService.agregarNoticia(noticia4. crearNoticia());
+        
+        NoticiaBasquet noticiaBasquet1 = new NoticiaBasquet("Basquet", "Gana Lakers en el último segundo", "Roberto", "Texto de la noticia...", "Lakers", "NBA");
+        noticiaService.agregarNoticia(noticiaBasquet1.crearNoticia());
+
+        NoticiaBasquet noticiaBasquet2 = new NoticiaBasquet("Basquet", "Triple doble de LeBron James", "Maria", "Texto de la noticia...", "Lakers", "liga");
+        noticiaService.agregarNoticia(noticiaBasquet2.crearNoticia());
+
+        NoticiaFutbol noticiaFutbol1 = new NoticiaFutbol("Fútbol", "Juan", "Barça gana el clásico", "Texto de la noticia...", "La Liga", "Barça", "Ferran Torres");
+        noticiaService.agregarNoticia(noticiaFutbol1.crearNoticia());
+
+        NoticiaFutbol noticiaFutbol2 = new NoticiaFutbol("Fútbol", "Ana", "Remontada épica del Madrid", "Texto de la noticia...", "Champions League", "Madrid", "Benzema");
+        noticiaService.agregarNoticia(noticiaFutbol2.crearNoticia());
+
+        NoticiaMotociclismo noticiaMoto1 = new NoticiaMotociclismo("Motociclismo", "Pedro", "Honda domina las prácticas", "Texto de la noticia...", "Honda");
+        noticiaService.agregarNoticia(noticiaMoto1.crearNoticia());
+
+        NoticiaMotociclismo noticiaMoto2 = new NoticiaMotociclismo("Motociclismo", "Lucía", "Yamaha sorprende en la clasificación", "Texto de la noticia...", "Yamaha");
+        noticiaService.agregarNoticia(noticiaMoto2.crearNoticia());
+
+        NoticiaTenis noticiaTenis1 = new NoticiaTenis("Tenis", "Alejandro", "Duelo épico en Wimbledon", "Texto de la noticia...", "Wimbledon", "Nadal");
+        noticiaService.agregarNoticia(noticiaTenis1.crearNoticia());
+
+        NoticiaTenis noticiaTenis2 = new NoticiaTenis("Tenis", "Carmen", "Sorpresas en el Abierto de Australia", "Texto de la noticia...", "Abierto de Australia", "Murray");
+        noticiaService.agregarNoticia(noticiaTenis2.crearNoticia());
+
     }
 }
