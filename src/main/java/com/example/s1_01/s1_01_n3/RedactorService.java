@@ -20,7 +20,7 @@ public class RedactorService {
 
     public Redactor buscarRedactorPorNombre(String nombre) {
         for (Redactor redactor : redactores) {
-            if (redactor.getNombre().equals(nombre)) {
+            if (redactor.getNombre().equalsIgnoreCase(nombre)) {
                 return redactor;
             }
         }

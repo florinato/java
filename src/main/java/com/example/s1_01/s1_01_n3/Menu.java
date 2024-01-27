@@ -341,10 +341,10 @@ public class Menu {
         NoticiaBasquet noticiaBasquet2 = new NoticiaBasquet("Basquet", "Triple doble de LeBron James", "Maria", "Texto de la noticia...", "Lakers", "liga");
         noticiaService.agregarNoticia(noticiaBasquet2.crearNoticia());
 
-        NoticiaFutbol noticiaFutbol1 = new NoticiaFutbol("Fútbol", "Juan", "Barça gana el clásico", "Texto de la noticia...", "La Liga", "Barça", "Ferran Torres");
+        NoticiaFutbol noticiaFutbol1 = new NoticiaFutbol("Futbol", "Juan", "Barça gana el clásico", "Texto de la noticia...", "La Liga", "Barça", "Ferran Torres");
         noticiaService.agregarNoticia(noticiaFutbol1.crearNoticia());
 
-        NoticiaFutbol noticiaFutbol2 = new NoticiaFutbol("Fútbol", "Ana", "Remontada épica del Madrid", "Texto de la noticia...", "Champions League", "Madrid", "Benzema");
+        NoticiaFutbol noticiaFutbol2 = new NoticiaFutbol("Futbol", "Ana", "Remontada épica del Madrid", "Texto de la noticia...", "Champions League", "Madrid", "Benzema");
         noticiaService.agregarNoticia(noticiaFutbol2.crearNoticia());
 
         NoticiaMotociclismo noticiaMoto1 = new NoticiaMotociclismo("Motociclismo", "Pedro", "Honda domina las prácticas", "Texto de la noticia...", "Honda");
@@ -356,7 +356,7 @@ public class Menu {
         NoticiaTenis noticiaTenis1 = new NoticiaTenis("Tenis", "Alejandro", "Duelo épico en Wimbledon", "Texto de la noticia...", "Wimbledon", "Nadal");
         noticiaService.agregarNoticia(noticiaTenis1.crearNoticia());
 
-        NoticiaTenis noticiaTenis2 = new NoticiaTenis("Tenis", "Carmen", "Sorpresas en el Abierto de Australia", "Texto de la noticia...", "Abierto de Australia", "Murray");
+        NoticiaTenis noticiaTenis2 = new NoticiaTenis("Tenis", "Carmen", "Sorpresas en el Abierto de Australia", "Texto de la noticia...", "Grand Slam", "Murray");
         noticiaService.agregarNoticia(noticiaTenis2.crearNoticia());
 
     }

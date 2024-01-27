@@ -23,25 +23,38 @@ public class NoticiaTenis extends Noticia {
     
   
 
-    public  int calcularPuntuacion() {
+    public int calcularPuntuacion() {
         int puntuacionTenis = 4;
-
-        if ("Federer".equals(tenistas) || "Nadal".equals(tenistas)|| "Djokovic".equals(tenistas)){
+    
+        // Sumar puntos por tenistas famosos
+        if ("Federer".equals(tenistas) || "Nadal".equals(tenistas) || "Djokovic".equals(tenistas)) {
             puntuacionTenis += 3; // 3 puntos por Federer, Nadal o Djokovic
         }
-
+    
+        // Evaluar competición
+        if ("Grand Slam".equals(competicion)) {
+            puntuacionTenis += 2; // 2 puntos adicionales si es un Grand Slam, por ejemplo
+        }
+    
         return puntuacionTenis;
     }
-
+    
     public double calcularPrecioNoticia() {
         double precioNoticia = 150;
-
-        if ("Federer".equals(tenistas) || "Nadal".equals(tenistas)|| "Djokovic".equals(tenistas)) {
+    
+        // Aumentar precio por tenistas famosos
+        if ("Federer".equals(tenistas) || "Nadal".equals(tenistas) || "Djokovic".equals(tenistas)) {
             precioNoticia += 100; // 100€ por Federer, Nadal o Djokovic
         }
-
+    
+        // Evaluar competición
+        if ("Grand Slam".equals(competicion)) {
+            precioNoticia += 50; // Aumentar 50€ si es un Grand Slam, por ejemplo
+        }
+    
         return precioNoticia;
     }
+    
     @Override
     public String[] crearNoticia(Scanner scanner) {
         System.out.print("Introduce el redactor de la noticia: ");
@@ -54,7 +67,7 @@ public class NoticiaTenis extends Noticia {
         String competicion = scanner.nextLine();
         System.out.print("Introduce los tenistas involucrados: ");
         String tenistas = scanner.nextLine();
-        String[] datosNoticia = {redactor,seccion,titular, texto, competicion,
+        String[] datosNoticia = {seccion,redactor,titular, texto, competicion,
         tenistas};
         return datosNoticia;
     }
@@ -62,8 +75,8 @@ public class NoticiaTenis extends Noticia {
     public String[] crearNoticia() {
         
         String[] datosNoticia = {
-            redactor, 
-            seccion, 
+            seccion,
+            redactor,             
             titular, 
             texto, 
             competicion, 
