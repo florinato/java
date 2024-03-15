@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class NoticiaService {
-    private List<String[]> noticias;
+    private List<Noticia> noticias;
     private Scanner scanner;
 
     public NoticiaService() {
@@ -13,7 +13,7 @@ public class NoticiaService {
         this.scanner = new Scanner(System.in);
     }
 
-    public void agregarNoticia(String[] noticia) {
+    public void agregarNoticia(Noticia noticia) {
         noticias.add(noticia);
     }
 
@@ -24,21 +24,19 @@ public class NoticiaService {
     
         System.out.print("Elige el número de la noticia a eliminar: ");
         int eleccion = scanner.nextInt();
-        scanner.nextLine(); // Limpiar el buffer
+        scanner.nextLine();
     
         if (eleccion > 0 && eleccion <= noticias.size()) {
-            eliminarNoticiaPorIndice(eleccion); // Ajuste del índice debido a que la lista comienza en 0
+            eliminarNoticiaPorIndice(eleccion);
         } else {
             System.out.println("Número de noticia inválido.");
         }
         listarNoticias();
     }
     
-    
-
     private void eliminarNoticiaPorIndice(int eleccion) {
         if (eleccion > 0 && eleccion <= noticias.size()) {
-            noticias.remove(eleccion - 1); 
+            noticias.remove(eleccion - 1);
             System.out.println("Noticia eliminada.");
         } else {
             System.out.println("Número de noticia inválido.");
@@ -48,16 +46,9 @@ public class NoticiaService {
     public void mostrarNoticiasPorRedactor(String nombreRedactor) {
         System.out.println("Noticias del redactor: " + nombreRedactor);
         int contador = 0;
-        for (String[] noticia : noticias) {
-            if (noticia[1].equals(nombreRedactor)) { 
-                System.out.print(++contador + ": ");
-                for (int i = 0; i < noticia.length; i++) {
-                    System.out.print(noticia[i]);
-                    if (i < noticia.length - 1) {
-                        System.out.print(", ");
-                    }
-                }
-                System.out.println();
+        for (Noticia noticia : noticias) {
+            if (noticia.getRedactor().equals(nombreRedactor)) {
+                System.out.println(++contador + ": " + noticia);
             }
         }
     
@@ -66,6 +57,7 @@ public class NoticiaService {
         }
     }
     
+    
     public void listarNoticias() {
         if (noticias.isEmpty()) {
             System.out.println("No hay noticias disponibles.");
@@ -73,18 +65,16 @@ public class NoticiaService {
         }
         System.out.println("Listado de todas las noticias:");
         int numeroNoticia = 1;
-        for (String[] noticia : noticias) {
+        for (Noticia noticia : noticias) {
             System.out.print(numeroNoticia++ + ": "); 
-            for (int i = 0; i < noticia.length; i++) { 
-                System.out.print(noticia[i] + " ");
-            }
+            System.out.println(noticia.toString());
             System.out.println(); 
         }
     }
     
-    public String[] getNoticia(int i) {
+    public Noticia getNoticia(int i) {
         
-        if (i >= 0 && i < noticias.size()) {          
+        if (i >= 0 && i < noticias.size()) {
             return noticias.get(i);
         } else {
             System.out.println("Índice fuera de rango.");

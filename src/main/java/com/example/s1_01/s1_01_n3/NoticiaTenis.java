@@ -3,37 +3,33 @@ package com.example.s1_01.s1_01_n3;
 import java.util.Scanner;
 
 public class NoticiaTenis extends Noticia {
-    private String seccion="Tenis";
+    
     private String competicion;
     private String tenistas;
-    private String texto;
     
-
-   
-    public NoticiaTenis(String seccion,String redactor, String titular,  String texto, String competicion, String tenistas) {
-        super(titular, redactor); // Llama al constructor de la clase madre
-        this.texto = texto;
+    public NoticiaTenis(String redactor, String titular,  String texto, String competicion, String tenistas) {
+        super(titular, redactor,texto); 
         this.competicion = competicion;
         this.tenistas = tenistas;
-        this.seccion=  seccion;
     }
-     public NoticiaTenis(){
-        
+    public NoticiaTenis(){
     }
-    
-  
+    @Override
+    public String toString() {
+        return "NoticiaTenis [" +  super.toString()+  ", competicion=" + competicion + ", tenistas=" + tenistas + "]";
+    }
 
     public int calcularPuntuacion() {
         int puntuacionTenis = 4;
     
         // Sumar puntos por tenistas famosos
         if ("Federer".equals(tenistas) || "Nadal".equals(tenistas) || "Djokovic".equals(tenistas)) {
-            puntuacionTenis += 3; // 3 puntos por Federer, Nadal o Djokovic
+            puntuacionTenis += 3; 
         }
     
         // Evaluar competición
         if ("Grand Slam".equals(competicion)) {
-            puntuacionTenis += 2; // 2 puntos adicionales si es un Grand Slam, por ejemplo
+            puntuacionTenis += 2; 
         }
     
         return puntuacionTenis;
@@ -44,19 +40,21 @@ public class NoticiaTenis extends Noticia {
     
         // Aumentar precio por tenistas famosos
         if ("Federer".equals(tenistas) || "Nadal".equals(tenistas) || "Djokovic".equals(tenistas)) {
-            precioNoticia += 100; // 100€ por Federer, Nadal o Djokovic
+            precioNoticia += 100; //
         }
     
         // Evaluar competición
         if ("Grand Slam".equals(competicion)) {
-            precioNoticia += 50; // Aumentar 50€ si es un Grand Slam, por ejemplo
+            precioNoticia += 50;
         }
     
         return precioNoticia;
     }
     
     @Override
-    public String[] crearNoticia(Scanner scanner) {
+    public  Noticia crearNoticia() {
+        @SuppressWarnings("resource")
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Introduce el redactor de la noticia: ");
         String redactor = scanner.nextLine();
         System.out.print("Introduce el título de la noticia: ");
@@ -67,21 +65,13 @@ public class NoticiaTenis extends Noticia {
         String competicion = scanner.nextLine();
         System.out.print("Introduce los tenistas involucrados: ");
         String tenistas = scanner.nextLine();
-        String[] datosNoticia = {seccion,redactor,titular, texto, competicion,
-        tenistas};
+        Noticia datosNoticia =new NoticiaTenis(redactor,titular, texto, competicion,tenistas);
         return datosNoticia;
     }
+
     @Override
-    public String[] crearNoticia() {
-        
-        String[] datosNoticia = {
-            seccion,
-            redactor,             
-            titular, 
-            texto, 
-            competicion, 
-            tenistas
-        };
+    public Noticia crearNoticia(String titular, String redactor) {
+        Noticia datosNoticia =new NoticiaTenis(redactor,titular, texto, competicion,tenistas);
         return datosNoticia;
     }
 }

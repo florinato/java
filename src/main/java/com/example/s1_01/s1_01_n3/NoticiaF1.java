@@ -5,17 +5,19 @@ import java.util.Scanner;
 public class NoticiaF1 extends Noticia {
     private String escuderia;
     private String texto;
-    private String seccion="F1";
 
-    public NoticiaF1(String seccion,String redactor, String titular,  String texto, String escuderia) {
-        super(titular, redactor); // Llama al constructor de la clase madre
-        this.texto = texto;
+    public NoticiaF1( String redactor, String titular, String texto, String escuderia) {
+        super(titular, redactor,texto);
         this.escuderia = escuderia;
-        this.seccion=  seccion;
+        
     }
 
-    public NoticiaF1() { 
-        // Constructor vacío
+    @Override
+    public String toString() {
+        return "NoticiaF1["+ super.toString()+  ", escuderia=" + escuderia + "]";
+    }
+
+    public NoticiaF1() {
     }
 
     @Override
@@ -40,40 +42,27 @@ public class NoticiaF1 extends Noticia {
         return precioNoticia;
     }
 
+    @SuppressWarnings("resource")
     @Override
-    public String[] crearNoticia(Scanner scanner) {
+    public Noticia crearNoticia() {
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Introduce el redactor de la noticia: ");
         String redactor = scanner.nextLine();
         System.out.print("Introduce el título de la noticia: ");
         String titular = scanner.nextLine();
         System.out.print("Introduce el texto de la noticia: ");
         String texto = scanner.nextLine();
-        System.out.print("Introduce la escudería (ej: Ferrari, Mercedes): ");
+        System.out.print("Introduce la escudería: ");
         String escuderia = scanner.nextLine();
 
-        String[] datosNoticia = {
-            seccion,
-            redactor,  
-            titular, 
-            texto, 
-            escuderia    
-        };
-        return datosNoticia;
+        return new NoticiaF1( redactor, titular, texto, escuderia);
     }
 
     @Override
-    public String[] crearNoticia() {
-        String[] datosNoticia = {
-            seccion,
-            redactor, 
-            titular, 
-            texto, 
-            escuderia    
-        };
-        
-        
-        return datosNoticia;
+    public Noticia crearNoticia(String titular, String redactor) {
+        return new NoticiaF1(redactor, titular, texto, escuderia);
     }
+}
 
     
-}
+

@@ -32,7 +32,5 @@ public class RedactorService {
             System.out.println("Nombre: " + redactor.getNombre() + ", DNI: " + redactor.getDni());
         }
     }
-    
-    
 }
 

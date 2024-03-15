@@ -3,25 +3,27 @@ package com.example.s1_01.s1_01_n3;
 import java.util.Scanner;
 
 public class NoticiaBasquet extends Noticia {
+    
     private String competicion;
     private String club;
-    private String texto;
-    private String seccion="Basquet";
-    public NoticiaBasquet(String seccion,String redactor, String titular,  String texto, String competicion, String club) {
-        super(titular, redactor); // Llama al constructor de la clase madre
-        this.texto = texto;
+    protected String texto;
+
+    public NoticiaBasquet( String redactor, String titular, String texto, String competicion, String club) {
+        super(titular, redactor,texto);
         this.competicion = competicion;
         this.club = club;
-        this.seccion=seccion;
+        
     }
-
+    @Override
+    public String toString() {
+        return "NoticiaBasquet["+ super.toString() + ", competicion=" + competicion + ", club=" + club + "]";
+    }
     public NoticiaBasquet() {
-        // Constructor vacío
+        
     }
-
     @Override
     public int calcularPuntuacion() {
-        int puntuacionBasquet = 4; // Puntuación base para noticias de baloncesto
+        int puntuacionBasquet = 4; 
 
         if ("Eurolliga".equals(competicion)) {
             puntuacionBasquet += 3;
@@ -38,7 +40,7 @@ public class NoticiaBasquet extends Noticia {
 
     @Override
     public double calcularPrecioNoticia() {
-        double precioNoticia = 250.0; // Precio base para noticias de baloncesto
+        double precioNoticia = 250.0;
 
         if ("Eurolliga".equals(competicion)) {
             precioNoticia += 75;
@@ -51,43 +53,27 @@ public class NoticiaBasquet extends Noticia {
         return precioNoticia;
     }
 
+    @SuppressWarnings("resource")
     @Override
-    public String[] crearNoticia(Scanner scanner) {
+    public Noticia crearNoticia() {
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Introduce el redactor de la noticia: ");
         String redactor = scanner.nextLine();
         System.out.print("Introduce el título de la noticia: ");
         String titular = scanner.nextLine();
         System.out.print("Introduce el texto de la noticia: ");
         String texto = scanner.nextLine();
-        System.out.print("Introduce la competición (ej: Eurolliga, ACB): ");
+        System.out.print("Introduce la competición: ");
         String competicion = scanner.nextLine();
-        System.out.print("Introduce el club (ej: Barça, Madrid): ");
+        System.out.print("Introduce el club: ");
         String club = scanner.nextLine();
 
-        String[] datosNoticia = {
-            seccion,
-            redactor,              
-            titular, 
-            texto, 
-            competicion, 
-            club 
-            
-        };
-        return datosNoticia;
+        return new NoticiaBasquet( redactor, titular, texto, competicion, club);
     }
 
     @Override
-    public String[] crearNoticia() {
-        String[] datosNoticia = {
-            seccion,
-            redactor, 
-            titular, 
-            texto, 
-            competicion, 
-            club
-        };
-        return datosNoticia;
+    public Noticia crearNoticia(String titular, String redactor) {
+        return new NoticiaBasquet(redactor, titular, texto, competicion, club);
     }
-
-    
 }
+

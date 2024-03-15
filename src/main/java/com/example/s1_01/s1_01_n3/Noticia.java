@@ -1,26 +1,31 @@
 package com.example.s1_01.s1_01_n3;
-
-import java.util.Scanner;
-
 public abstract class Noticia {
     String titular;
     String redactor;
+    String texto;
 
     public Noticia(){
             
     }
-    public Noticia(String titular, String redactor) {
+    public Noticia(String titular, String redactor,String texto) {
         this.titular = titular;
         this.redactor = redactor;
+        this.texto=texto;
+    }
+    @Override
+    public String toString() {
+        return "titular=" + titular + ", redactor=" + redactor + ", texto=" + texto ;
+    }
+    public String getRedactor() {
+        return redactor;
     }
     public abstract int calcularPuntuacion();
+
     public abstract double calcularPrecioNoticia();
 
-    public abstract String[] crearNoticia(Scanner scanner);
+    public abstract Noticia crearNoticia();
     
-    // Método sobrecargado con tipos de parámetros especificados
-    public abstract String[] crearNoticia();
-    
+    public abstract Noticia crearNoticia(String titular, String redactor);
 }
 
 

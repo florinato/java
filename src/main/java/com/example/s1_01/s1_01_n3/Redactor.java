@@ -9,7 +9,6 @@ public class Redactor {
         this.dni = dni;
     }
 
-    // Métodos getters
     public String getNombre() {
         return nombre;
     }
@@ -18,7 +17,6 @@ public class Redactor {
         return dni;
     }
 
-    
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -26,8 +24,4 @@ public class Redactor {
     public void setDni(String dni) {
         this.dni = dni;
     }
-
-    
-
-    
 }
