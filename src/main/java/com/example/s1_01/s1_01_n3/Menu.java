@@ -58,7 +58,7 @@ public class Menu {
                     System.out.println("Saliendo...");
                     break;
                 default:
-                    System.out.println("Opción no válida, por favor intenta de nuevo.");
+                    System.out.println("Opción no válida, por favor intenta de nuevo");
                     break;
             }
         } while (opcion != 8);
@@ -69,52 +69,29 @@ public class Menu {
         System.out.print("Elige el número de la noticia para ver el precio: ");
         int eleccion = scanner.nextInt();
         scanner.nextLine();
-        double precio;
         Noticia noticiaSeleccionada = noticiaService.getNoticia(eleccion - 1);
-    
-        if (noticiaSeleccionada instanceof NoticiaFutbol) {
-            precio = ((NoticiaFutbol) noticiaSeleccionada).calcularPrecioNoticia();
-        } else if (noticiaSeleccionada instanceof NoticiaTenis) {
-            precio = ((NoticiaTenis) noticiaSeleccionada).calcularPrecioNoticia();
-        } else if (noticiaSeleccionada instanceof NoticiaF1) {
-            precio = ((NoticiaF1) noticiaSeleccionada).calcularPrecioNoticia();
-        } else if (noticiaSeleccionada instanceof NoticiaMotociclismo) {
-            precio = ((NoticiaMotociclismo) noticiaSeleccionada).calcularPrecioNoticia();
-        } else if (noticiaSeleccionada instanceof NoticiaBasquet) {
-            precio = ((NoticiaBasquet) noticiaSeleccionada).calcularPrecioNoticia();
-        } else {
-            System.out.println("Tipo de noticia no reconocido");
+        if (noticiaSeleccionada == null) {
+            System.out.println("Noticia no encontrada");
             return;
         }
-    
+        double precio = noticiaSeleccionada.calcularPrecioNoticia();
         System.out.println("El precio de la noticia es: " + precio);
     }
+    
     private void calcularPuntuacionNoticia() {
         noticiaService.listarNoticias();
-        System.out.print("Elige el número de la noticia para ver la puntuación y el precio: ");
+        System.out.print("Elige el número de la noticia para ver la puntuación");
         int eleccion = scanner.nextInt();
-        scanner.nextLine(); // Limpiar el buffer
-        int puntuacion;
+        scanner.nextLine();
         Noticia noticiaSeleccionada = noticiaService.getNoticia(eleccion - 1);
-    
-        // Utilizamos instanceof para determinar el tipo específico de noticia seleccionada.
-        if (noticiaSeleccionada instanceof NoticiaFutbol) {
-            puntuacion = ((NoticiaFutbol) noticiaSeleccionada).calcularPuntuacion();
-        } else if (noticiaSeleccionada instanceof NoticiaTenis) {
-            puntuacion = ((NoticiaTenis) noticiaSeleccionada).calcularPuntuacion();
-        } else if (noticiaSeleccionada instanceof NoticiaF1) {
-            puntuacion = ((NoticiaF1) noticiaSeleccionada).calcularPuntuacion();
-        } else if (noticiaSeleccionada instanceof NoticiaMotociclismo) {
-            puntuacion = ((NoticiaMotociclismo) noticiaSeleccionada).calcularPuntuacion();
-        } else if (noticiaSeleccionada instanceof NoticiaBasquet) {
-            puntuacion = ((NoticiaBasquet) noticiaSeleccionada).calcularPuntuacion();
-        } else {
-            System.out.println("Tipo de noticia no reconocido");
+        if (noticiaSeleccionada == null) {
+            System.out.println("Noticia no encontrada o elección fuera de rango");
             return;
         }
-    
+        int puntuacion = noticiaSeleccionada.calcularPuntuacion();
         System.out.println("La puntuación de la noticia es: " + puntuacion);
     }
+    
 
     private void agregarRedactor() {
         System.out.println("Lista de redactores antes de añadir uno nuevo:");
