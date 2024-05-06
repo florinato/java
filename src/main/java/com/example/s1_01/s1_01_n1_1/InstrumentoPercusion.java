@@ -1,9 +1,10 @@
 package com.example.s1_01.s1_01_n1_1;
 
 public class InstrumentoPercusion extends Instrumento {
-    InstrumentoPercusion(String nombre, double precio) {
-        this.nombre = nombre;
-        this.precio = precio;
+    
+
+    public InstrumentoPercusion(String nombre, double precio) {
+        super(nombre, precio);
     }
 
     @Override

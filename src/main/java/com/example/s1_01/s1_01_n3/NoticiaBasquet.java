@@ -6,8 +6,7 @@ public class NoticiaBasquet extends Noticia {
     
     private String competicion;
     private String club;
-    protected String texto;
-
+    
     public NoticiaBasquet( String redactor, String titular, String texto, String competicion, String club) {
         super(titular, redactor,texto);
         this.competicion = competicion;

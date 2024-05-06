@@ -7,8 +7,7 @@ public class NoticiaFutbol extends Noticia {
     private String competicion;
     private String club;
     private String jugador;
-    private String texto;
-
+    
     public NoticiaFutbol(String redactor, String titular, String texto, String competicion, String club, String jugador) {
         super(titular, redactor,texto);
         this.competicion = competicion;

@@ -5,6 +5,11 @@ abstract class Instrumento {
     String nombre;
     double precio;
 
+    public Instrumento(String nombre, double precio) {
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+
     abstract void tocar();
 
      

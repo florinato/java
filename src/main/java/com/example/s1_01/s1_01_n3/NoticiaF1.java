@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class NoticiaF1 extends Noticia {
     private String escuderia;
-    private String texto;
-
+    
     public NoticiaF1( String redactor, String titular, String texto, String escuderia) {
         super(titular, redactor,texto);
         this.escuderia = escuderia;

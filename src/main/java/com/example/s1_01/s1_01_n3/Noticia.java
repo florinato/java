@@ -1,8 +1,8 @@
 package com.example.s1_01.s1_01_n3;
 public abstract class Noticia {
-    String titular;
-    String redactor;
-    String texto;
+    protected String titular;
+    protected String redactor;
+    protected String texto;
 
     public Noticia(){
             

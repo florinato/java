@@ -6,7 +6,6 @@ public class NoticiaMotociclismo extends Noticia {
     
     private String equipo;
     private String piloto;
-    private String texto;
 
     public NoticiaMotociclismo(String redactor, String titular, String texto, String equipo, String piloto) {
         super(titular, redactor,texto);
